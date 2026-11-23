@@ -1,10 +1,10 @@
 [Desktop Entry]
-Name=WinRAR
-Exec=WinRAR
+Name=BulkFileChanger
+Exec=BulkFileChanger
 Terminal=false
 Type=Application
 StartupNotify=false
-Icon=winrar
-StartupWMClass=WinRAR
+Icon=BulkFileChanger
+StartupWMClass=BulkFileChanger
 MimeType=application/x-rar:application/x-zip;application/x-compressed-rar:application/x-compressed-zip
 Categories=GTK;Archiving;Compression;Utility;

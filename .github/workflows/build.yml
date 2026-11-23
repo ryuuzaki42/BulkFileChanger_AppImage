@@ -31,34 +31,31 @@ jobs:
       run: |
         set -x
         tag=1 #1
-        version=$(grep -o "WinRAR:.*" README.md | cut -d ' ' -f2)
-        echo "WinRAR version: $version - Tag: $tag"
+        version=$(grep -o "BulkFileChanger:.*" README.md | cut -d ' ' -f2)
+        echo "BulkFileChanger version: $version - Tag: $tag"
 
         rm -rv .git/ .github/ .gitignore # Remove folders/files not needed
 
-        ## Aded key / crack
-        wget https://raw.githubusercontent.com/Fonkelflare/winrar-rarreg.key/main/rarreg.key -O drive_c/WinRAR/rarreg.key
-
         cd ../
-        ARCH=x86_64 VERSION="${version}-1_JB" ./appimagetool-x86_64.AppImage WinRAR_AppImage/
+        ARCH=x86_64 VERSION="${version}-1_JB" ./appimagetool-x86_64.AppImage BulkFileChanger_AppImage/
         pwd; ls -lah
 
     - name: Rename AppImage and generate MD5
       run: |
         set -x
         cd ../
-        fileName=$(ls WinRAR*.AppImage)
+        fileName=$(ls BulkFileChanger*.AppImage)
         echo "fileName: $fileName"
         md5sum "${fileName}" > "${fileName}".md5
         pwd; ls -lah
-        mv "${fileName}" "${fileName}".zsync "${fileName}".md5 WinRAR_AppImage/
+        mv "${fileName}" "${fileName}".zsync "${fileName}".md5 BulkFileChanger_AppImage/
 
     - uses: xresloader/upload-to-github-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        file: "WinRAR*.AppImage; WinRAR*.zsync; WinRAR*.md5"
+        file: "BulkFileChanger*.AppImage; BulkFileChanger*.zsync; BulkFileChanger*.md5"
         #overwrite: true
         verbose: true
         draft: false
-        default_release_name: "WinRAR V in AppImage"
+        default_release_name: "BulkFileChanger V in AppImage"

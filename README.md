@@ -1,18 +1,18 @@
 
-# WinRAR_AppImage
+# BulkFileChanger_AppImage
 
- - WinRAR + Wine
+ - BulkFileChanger + Wine
 
-WinRAR is a file archiver and compression utility for Microsoft Windows
+BulkFileChanger is a file archiver and compression utility for Microsoft Windows
 
-https://www.win-rar.com/
+https://www.nirsoft.net/utils/bulk_file_changer.html
 
-## Repository: https://github.com/ryuuzaki42/WinRAR_AppImage
-     WinRAR: 7.23
+## Repository: https://github.com/ryuuzaki42/BulkFileChanger_AppImage
+     BulkFileChanger: 1.74
 
 ---
 ### To change font size, change the DPI value in LogPixels
-In the user.reg in `~/.config/WinRAR_AppImage/user.reg`
+In the user.reg in `~/.config/BulkFileChanger_AppImage/user.reg`
 
 At the end of block `[Control Panel\\Desktop]`
 
@@ -28,4 +28,4 @@ At the end of block `[Control Panel\\Desktop]`
 `"LogPixels"=dword:000000144`
 
 ---
-https://www.win-rar.com/download.html
+https://www.nirsoft.net/utils/bulk_file_changer.html
